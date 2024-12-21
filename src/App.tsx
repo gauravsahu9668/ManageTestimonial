@@ -7,8 +7,9 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/testimonial/:id' element={<Testimonial></Testimonial>}></Route>
         <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/testimonial/:id' element={<Testimonial></Testimonial>}></Route>
+        <Route path='/testimonial'element={<Testimonial></Testimonial>}></Route>
       </Routes>
     </>
   )

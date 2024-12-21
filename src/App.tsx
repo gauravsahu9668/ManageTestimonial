@@ -3,7 +3,7 @@ import Testimonial from "./Testimonials/Testimonial";
 const Home = () => {
   return (
     <div>
-      <Link to={`/testimonial/${1}`}>
+      <Link to={`/testimonial`}>
         <div>Go to Testimonial Dashboard</div>
       </Link>
     </div>

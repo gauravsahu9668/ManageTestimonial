@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+// import { useLocation, useParams } from "react-router-dom";
 import { RxCross2 } from "react-icons/rx"
 import axios from "axios";
 import { BACKEND_URL } from "../server/axiosConnect";
@@ -11,12 +11,14 @@ import { RiEmotionUnhappyLine } from "react-icons/ri";
 import { IoMdSad } from "react-icons/io";
 import { IoMdHappy } from "react-icons/io";
 import { ImHappy2 } from "react-icons/im";
+import { useParams } from "react-router-dom";
 // import { mailSender } from "../../server/mailSender";
 const Testimonial:React.FC = () => {
-  const location = useLocation();
-  const url = location.pathname;
-  const total = url.split("/");
-  const id = Number(total[2]);
+  // const location = useLocation();
+  // const url = location.pathname;
+  // const total = url.split("/");
+  const { Id }=useParams()
+  const id=Number(Id)
   const [rating, setRating] = useState(0);
 
   // const handleRatingChange=(newRating:number) => {

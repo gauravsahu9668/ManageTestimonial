@@ -17,8 +17,7 @@ const Testimonial:React.FC = () => {
   // const location = useLocation();
   // const url = location.pathname;
   // const total = url.split("/");
-  const { Id }=useParams()
-  const id=Number(Id)
+  const { id }=useParams()
   const [rating, setRating] = useState(0);
 
   // const handleRatingChange=(newRating:number) => {
@@ -89,7 +88,7 @@ const Testimonial:React.FC = () => {
         url: `${BACKEND_URL}/nonuser/getspaceDetails`,
         method: "POST",
         data: {
-          spaceId: id,
+          spaceId: Number(id),
         },
       }).then((result)=>{
         setSpaceDetails(result.data.data)

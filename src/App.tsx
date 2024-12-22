@@ -7,7 +7,7 @@ const Home = () => {
     <div>
       <input type="text" placeholder="enter id here" onChange={(e)=>{setid(e.target.value)}}></input>
       <Link to={`/testimonial/${id}`}>
-      <button>Go to testimnial</button>
+      <button>See Testinomial</button>
       </Link>
     </div>
   );

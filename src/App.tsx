@@ -1,10 +1,13 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Testimonial from "./Testimonials/Testimonial";
+import { useState } from "react";
 const Home = () => {
+  const [id,setid]=useState("")
   return (
     <div>
-      <Link to={`/testimonial/1`}>
-        <div>Go to Testimonial Dashboard</div>
+      <input type="text" placeholder="enter id here" onChange={(e)=>{setid(e.target.value)}}></input>
+      <Link to={`/testimonial/${id}`}>
+      <button>Go to testimnial</button>
       </Link>
     </div>
   );

@@ -62,7 +62,7 @@ const Testimonial:React.FC = () => {
               url: `${BACKEND_URL}/nonuser/create-text-review`,
               method: "POST",
               data: {
-                id,
+                id:Number(id),
                 custName,
                 custEmail,
                 imageString,

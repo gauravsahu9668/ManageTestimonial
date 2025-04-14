@@ -12,6 +12,7 @@ import { IoMdSad } from "react-icons/io";
 import { IoMdHappy } from "react-icons/io";
 import { ImHappy2 } from "react-icons/im";
 import { useParams } from "react-router-dom";
+import 'reactjs-popup/dist/index.css';
 // import { mailSender } from "../../server/mailSender";
 const Testimonial:React.FC = () => {
   // const location = useLocation();
@@ -129,24 +130,23 @@ const Testimonial:React.FC = () => {
     </div>
       </div> 
       :
-      <div className="w-full min-h-[100vh] relative bg-[#151719]  flex flex-col">
-        <div className="w-full h-[60px] pl-4 flex items-center justify-start bg-[#151719] text-white text-[23px] font-semibold md:text-[28px]">
+      <div className="w-full min-h-[100vh] relative  bg-[#151719]  flex flex-col">
+        <div className="hidden w-fit absolute top-2 left-2 h-[60px] pl-4 md:flex items-center justify-start bg-[#151719] text-white text-[23px] font-semibold md:text-[28px]">
           Testimonial
         </div>
-        
-        <div className="w-[90%] md:w-[70%] lg:w-[40%] flex flex-col items-center mx-auto bg-[#151719]">
+        <div className="  w-[90%] min-h-screen p-3 mt-3 border-[white] rounded-xl shadow-[0_0_50px_rgba(16,185,129,0.15)] hover:shadow-[0_0_50px_rgba(16,185,129,0.25)] transition-shadow duration-300 mb-5 md:w-[70%] lg:w-[50%] flex flex-col items-center mx-auto bg-[#151719]">
           <img
             src={space.spaceLogo}
             alt="Space Logo"
             className="w-full max-w-[350px] h-[200px] rounded-md object-cover"
           />
-          <h1 className="text-[#D9E3EA] font-bold text-[30px] md:text-[40px] lg:text-[50px] mt-4 text-center">
+          <h1 className="text-[#D9E3EA] font-bold text-[20px] md:text-[20px] lg:text-[30px] mt-1 text-center">
             {space.headerTitle}
           </h1>
-          <p className="mt-3 text-[16px] md:text-[18px] lg:text-[20px] text-center text-[#D9E3EA]">
+          <p className="mt-3 text-[16px] md:text-[18px] lg:text-[20px] text-start text-[#D9E3EA]">
             {space.customMessage}
           </p>
-          <div className="w-full flex flex-col items-start mt-5">
+          <div className="w-full flex flex-col items-start mt-2">
             <div className="text-[#D9E3EA] m-3 text-[20px] md:text-[22px] font-bold">
               QUESTIONS
             </div>
@@ -162,7 +162,7 @@ const Testimonial:React.FC = () => {
             ))}
           </div>
           <div className="w-[90%] md:w-[70%] flex flex-col sm:flex-row items-center justify-around rounded-md mt-10 gap-4">
-            <button onClick={()=>{setvideopopup(true)}} className="w-full sm:w-auto text-[white] text-[16px] md:text-[20px] bg-[#5D5DFF] px-5 py-3 rounded-md hover:bg-[#4a4adc]">
+           <button onClick={()=>{setvideopopup(true)}} className="w-full sm:w-auto text-[white] text-[16px] md:text-[20px] bg-[#5D5DFF] px-5 py-3 rounded-md hover:bg-[#4a4adc]">
               {space.Extras.videoButtonText}
             </button>
             <button onClick={()=>{settextpopup(true)}} className="w-full sm:w-auto text-[white] text-[16px] md:text-[20px] bg-[#33363A] px-5 py-3 rounded-md hover:bg-[#2a2c2e]">
@@ -172,20 +172,17 @@ const Testimonial:React.FC = () => {
         </div>
         {
          textpopup &&  
-  <div className="w-full p-3 h-screen absolute left-0 top-0 flex items-center justify-center bg-black/30 backdrop-blur-sm">
-  <div className="w-[30%] relative h-[90vh] p-5 flex flex-col items-start inset-0 rounded-md bg-[#F9FAFB] scrollbar shadow-lg overflow-x-hidden overflow-y-auto">
-    <div
+        <div className="w-full min-h-screen absolute gap-x-6 left-0 top-0 flex items-center justify-center bg-black/30 backdrop-blur-sm">
+         <div className=" w-[90%] md:w-[70%] lg:w-[40%] relative h-[90vh] p-5 flex flex-col mtb-20 items-start inset-0 rounded-md bg-white scrollbar shadow-lg overflow-x-hidden overflow-y-auto">
+            <div
       onClick={() => { settextpopup(false) }}
       className="absolute right-3 top-3 flex items-center justify-center rounded-md bg-[#F3F4F6] cursor-pointer hover:bg-[#E5E7EB] w-[30px] h-[30px]"
     >
       <RxCross2 />
-    </div>
-
-    <div className="text-[#333333] text-[22px] font-semibold">{space.Extras.textSubmissionTitle}</div>
-
-    <img className="w-[200px] h-[100px] rounded-lg mt-4" src={space.spaceLogo} alt="Space Logo" />
-
-    <div className="w-full flex flex-col items-start mt-6">
+            </div>
+            <div className="text-[#333333] text-[22px] font-semibold">{space.Extras.textSubmissionTitle}</div>
+           <img className="w-[200px] h-[100px] rounded-lg mt-4" src={space.spaceLogo} alt="Space Logo" />
+           <div className="w-full flex flex-col items-start mt-6">
       <div className="text-[#1F2937] m-3 text-[20px] md:text-[22px] font-bold">QUESTIONS</div>
       <div className="w-[50px] md:w-[80px] h-[5px] md:h-[8px] mt-2 bg-[#5D5DFF]"></div>
 
@@ -195,32 +192,30 @@ const Testimonial:React.FC = () => {
           {ques}
         </div>
       ))}
-    </div>
-
-    <div className="mt-5 flex flex-col">
-      <label htmlFor="image-file" className="text-[#4B5563] font-semibold">Attach Image(s)</label>
-      <div className="flex flex-row w-fit mt-4 items-center gap-x-6">
-        <div className="w-[80px] h-[50px] rounded-md bg-[#F9FAFB] border border-[#E5E7EB]">
-          {imageString && <img src={imageString} className="w-full h-full rounded-md" alt="Uploaded Image" />}
+           </div>
+           <div className="mt-5 flex flex-col">
+            <label htmlFor="image-file" className="text-[#4B5563] font-semibold">Attach Image(s)</label>
+           <div className="flex flex-row w-fit mt-4 items-center gap-x-6">
+           <div className="w-[80px] h-[50px] rounded-md bg-[#F9FAFB] border border-[#E5E7EB]">
+           {imageString && <img src={imageString} className="w-full h-full rounded-md" alt="Uploaded Image" />}
+           </div>
+           <input onChange={handleFileChange} id="image-file" accept="image/*" type="file" />
+           </div>
         </div>
-        <input onChange={handleFileChange} id="image-file" accept="image/*" type="file" />
-      </div>
-    </div>
-
     <div className="flex flex-row items-center mx-auto text-[18px] font-semibold mt-8 mb-5 gap-x-5">
-      <div className={`flex flex-col items-center text-[18px] text-[#4B5563] ${rating === 1 && "text-[#F87171]"}`} onClick={() => { setRating(1) }}>
+      <div className={`flex flex-col items-center text-[18px] text-[#4B5563] ${rating === 1 && "text-[rgb(237,176,44)]"}`} onClick={() => { setRating(1) }}>
         <FaAngry /> Angry
       </div>
-      <div className={`flex flex-col items-center text-[18px] text-[#4B5563] ${rating === 2 && "text-[#F87171]"}`} onClick={() => { setRating(2) }}>
+      <div className={`flex flex-col items-center text-[18px] text-[#4B5563] ${rating === 2 && "text-[rgb(237,176,44)]"}`} onClick={() => { setRating(2) }}>
         <RiEmotionUnhappyLine /> Sad
       </div>
-      <div className={`flex flex-col items-center text-[18px] text-[#4B5563] ${rating === 3 && "text-[#F87171]"}`} onClick={() => { setRating(3) }}>
+      <div className={`flex flex-col items-center text-[18px] text-[#4B5563] ${rating === 3 && "text-[rgb(237,176,44)]"}`} onClick={() => { setRating(3) }}>
         <IoMdSad /> Happy
       </div>
-      <div className={`flex flex-col items-center text-[18px] text-[#4B5563] ${rating === 4 && "text-[#F87171]"}`} onClick={() => { setRating(4) }}>
+      <div className={`flex flex-col items-center text-[18px] text-[#4B5563] ${rating === 4 && "text-[rgb(237,176,44)]"}`} onClick={() => { setRating(4) }}>
         <IoMdHappy /> Amazing
       </div>
-      <div className={`flex flex-col items-center text-[18px] text-[#4B5563] ${rating === 5 && "text-[#F87171]"}`} onClick={() => { setRating(5) }}>
+      <div className={`flex flex-col items-center text-[18px] text-[#4B5563] ${rating === 5 && "text-[rgb(237,176,44)]"}`} onClick={() => { setRating(5) }}>
         <ImHappy2 /> Excellent
       </div>
     </div>
@@ -279,9 +274,8 @@ const Testimonial:React.FC = () => {
     <button onClick={reviewSubmit} className="w-full text-[18px] font-semibold flex items-center justify-center py-2 bg-[#5D5DFF] rounded-lg hover:bg-[#4a4adc]">
       Send
     </button>
-  </div>
-</div>
-
+         </div>
+        </div>
         }
         {
          videopopup && 

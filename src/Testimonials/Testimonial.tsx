@@ -134,7 +134,7 @@ const Testimonial:React.FC = () => {
         <div className="hidden w-fit absolute top-2 left-2 h-[60px] pl-4 md:flex items-center justify-start bg-[#151719] text-white text-[23px] font-semibold md:text-[28px]">
           Testimonial
         </div>
-        <div className="w-full min-h-screen p-3 mt-3 border-[white] rounded-xl shadow-[0_0_50px_rgba(16,185,129,0.15)] hover:shadow-[0_0_50px_rgba(16,185,129,0.25)] transition-shadow duration-300 mb-5  lg:w-[50%] flex flex-col items-center mx-auto bg-[#151719]">
+        <div className="w-[90%] min-h-screen p-3 mt-3 border-[white] rounded-xl shadow-[0_0_50px_rgba(16,185,129,0.15)] hover:shadow-[0_0_50px_rgba(16,185,129,0.25)] transition-shadow duration-300 mb-5 md:w-[70%] lg:w-[50%] flex flex-col items-center mx-auto bg-[#151719]">
           <img
             src={space.spaceLogo}
             alt="Space Logo"
